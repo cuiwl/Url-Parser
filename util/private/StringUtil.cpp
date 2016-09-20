@@ -7,6 +7,8 @@
 /**
 	version history:
 
+	2016-09-20        0.1.2       cuiwl        fixed issue that split string lost last one element
+
 	2016-09-19        0.1.1       cuiwl        add string split functionality
 
 	2016-08-18        0.1.0       cuiwl        initial implementation
@@ -58,6 +60,12 @@ void split(std::vector<std::string>& out, const std::string& in, const std::stri
 		
 		curPos = found;
 		found = in.find(separator, curPos);
+		if (found == std::string::npos)
+		{
+			out.push_back(in.substr(curPos, in.length() - curPos));
+			break;
+		}
+		
 	}
 }
 
