@@ -21,6 +21,6 @@
 *.app
 
 #VisualStudio temp files
-Debug/*
+msvc12/Debug/*
 *.opensdf
 *.sdf
