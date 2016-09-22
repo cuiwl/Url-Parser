@@ -24,3 +24,4 @@
 msvc12/Debug/*
 *.opensdf
 *.sdf
+*.suo
