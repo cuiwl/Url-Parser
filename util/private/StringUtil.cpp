@@ -7,6 +7,8 @@
 /**
 	version history:
 
+	2016-10-14        0.1.3       cuiwl        fixed issue that cannot parse separator of last position
+
 	2016-09-20        0.1.2       cuiwl        fixed issue that split string lost last one element
 
 	2016-09-19        0.1.1       cuiwl        add string split functionality
@@ -60,7 +62,7 @@ void split(std::vector<std::string>& out, const std::string& in, const std::stri
 		
 		curPos = found;
 		found = in.find(separator, curPos);
-		if (found == std::string::npos)
+		if (curPos < in.length() && found == std::string::npos)
 		{
 			out.push_back(in.substr(curPos, in.length() - curPos));
 			break;
